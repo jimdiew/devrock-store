@@ -15,7 +15,7 @@ export default function Reducer(state, action) {
         ...state,
         carrito: [
           ...state.carrito,
-          state.productos.filter((ite) => ite.id == parseInt(payload)),
+          state.productos.filter((ite) => ite.id === parseInt(payload)),
         ],
       };
 

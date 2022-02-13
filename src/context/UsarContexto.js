@@ -23,7 +23,7 @@ export default function UsarContexto(props) {
   };
   const eliminarCarrito = (item) => {
     console.log("Eliminar carrito", item);
-    dispatch({ type: "ELIMINAR_CARRITO", payload: item });
+    dispatch({ type: "ELIMINAR_CARRITO", payload: id });
   };
   return (
     <Contexto.Provider
