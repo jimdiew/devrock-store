@@ -1,15 +1,15 @@
 import axios from "axios";
-// import React, { useContext } from "react";
 import Contexto from "./Contexto";
-import { useState } from "react";
+import { useReducer } from "react";
+import Reducer from "./Reducer";
 
 export default function UsarContexto(props) {
   const { children } = props;
-  const [estado, setEstado] = useState([]);
   const estadoInicial = {
     productos: [],
     carrito: [],
   };
+  const [state, dispatch] = useReducer(Reducer, estadoInicial);
   const listameProductos = async () => {
     const res = await axios.get(
       "https://devrockstore-default-rtdb.firebaseio.com/productos.json"
