@@ -14,7 +14,7 @@ export default function Home() {
         <div className="wraper">
           <div className="home">
             {productos.map((item) => (
-              <Item {...item}></Item>
+              <Item {...item} key={item.id}></Item>
             ))}
           </div>
         </div>
