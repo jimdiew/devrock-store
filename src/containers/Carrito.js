@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../assets/css/Carrito.css";
 import ItemCarrito from "../components/ItemCarrito";
+import Contexto from "../context/Contexto";
 
 export default function Carrito() {
+  const { carrito, eliminarCarrito } = useContext(Contexto);
   return (
     <>
       <div className="carrito">
         <div className="carrito-listadito">
-          <ItemCarrito></ItemCarrito>
-          <ItemCarrito></ItemCarrito>
-          <ItemCarrito></ItemCarrito>
-          <ItemCarrito></ItemCarrito>
+          {carrito.map((item, i) => (
+            <ItemCarrito {...item} key={i}></ItemCarrito>
+          ))}
         </div>
 
         <div className="carrito-precio">

@@ -2,7 +2,12 @@ import React from "react";
 import "../assets/css/ItemCarrito.css";
 import img from "../assets/statics/0.png";
 
-export default function ItemCarrito() {
+export default function ItemCarrito(props) {
+  const { nombre, precio, img, eliminarCarrito, id } = props[0];
+  const handleBorrar = () => {
+    eliminarCarrito(id);
+  };
+
   return (
     <>
       <div className="carrito-item">

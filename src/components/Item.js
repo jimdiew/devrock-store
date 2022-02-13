@@ -3,7 +3,7 @@ import "../assets/css/Item.css";
 import Contexto from "../context/Contexto";
 
 export default function Item(props) {
-  const { nombre, precio, medidas, img } = props;
+  const { nombre, precio, medidas, img, id } = props;
   const { agregarCarrito } = useContext(Contexto);
   return (
     <>
@@ -18,7 +18,7 @@ export default function Item(props) {
             <button
               className="home-item-comprar"
               onClick={() => {
-                agregarCarrito("pepeloco");
+                agregarCarrito(id);
               }}
             >
               +

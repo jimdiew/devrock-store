@@ -14,7 +14,7 @@ export default function UsarContexto(props) {
     const res = await axios.get(
       "https://devrockstore-default-rtdb.firebaseio.com/productos.json"
     );
-    setEstado(res.data);
+    dispatch({ type: "LISTAME_PRODUCTOS", payload: res.data });
     console.log(res.data);
   };
   const agregarCarrito = (item) => {
@@ -24,8 +24,8 @@ export default function UsarContexto(props) {
   return (
     <Contexto.Provider
       value={{
-        productos: estado,
-        // carrito: estadoInicial.carrito,
+        productos: state.productos,
+        carrito: state.carrito,
         listameProductos,
         agregarCarrito,
         eliminarCarrito,
