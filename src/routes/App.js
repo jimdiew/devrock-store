@@ -4,18 +4,21 @@ import Carrito from "../containers/Carrito";
 import Producto from "../containers/Producto";
 import Layout from "../components/Layout";
 import React from "react";
+import UsarContexto from "../context/UsarContexto";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/carrito" element={<Carrito />}></Route>
-            <Route exact path="/producto" element={<Producto />}></Route>
-          </Routes>
-        </Layout>
+        <UsarContexto>
+          <Layout>
+            <Routes>
+              <Route exact path="/" element={<Home />}></Route>
+              <Route exact path="/carrito" element={<Carrito />}></Route>
+              <Route exact path="/producto" element={<Producto />}></Route>
+            </Routes>
+          </Layout>
+        </UsarContexto>
       </BrowserRouter>
     </>
   );
